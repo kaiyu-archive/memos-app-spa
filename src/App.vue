@@ -36,7 +36,7 @@
 <script>
 const STORAGE_KEY = 'memos-app'
 const memoStorage = {
-  fetch: function() {
+  fetch () {
     const memos = JSON.parse(
       localStorage.getItem(STORAGE_KEY) || '[]'
     )
@@ -46,7 +46,7 @@ const memoStorage = {
     memoStorage.uid = memos.length
     return memos
   },
-  save: function(memos) {
+  save (memos) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(memos))
   }
 }
@@ -58,7 +58,7 @@ export default {
   components: {
     EditMemo
   },
-  data() {
+  data () {
     return {
       memos: memoStorage.fetch(),
       editMode: false,
@@ -67,12 +67,12 @@ export default {
   },
 
   methods: {
-    selectMemo: function (memo) {
+    selectMemo (memo) {
       this.selectedMemo = memo
       this.editMode = true
     },
 
-    removeMemo: function (memo) {
+    removeMemo (memo) {
       const index = this.memos.indexOf(memo)
       this.memos.splice(index, 1)
       memoStorage.save(this.memos)
@@ -104,7 +104,7 @@ export default {
     },
 
     generateClassName (memo) {
-      return "body" + (!this.editMode && this.selectedMemo.id === undefined || memo.id === this.selectedMemo.id ? "" : "-disabled")
+      return 'body' + (!this.editMode && this.selectedMemo.id === undefined || memo.id === this.selectedMemo.id ? '' : '-disabled')
     },
 
     splitTitle (memo) {

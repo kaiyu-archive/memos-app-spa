@@ -16,10 +16,10 @@ export default {
   props: [ 'selectedMemo' ],
 
   methods: {
-    saveMemo: function(memo) {
+    saveMemo (memo) {
       this.$emit('saveMemo', memo)
     },
-    unselectMemo: function() {
+    unselectMemo () {
       this.$emit('unselectMemo')
     }
   }
