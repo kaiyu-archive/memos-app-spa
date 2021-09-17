@@ -2,30 +2,29 @@
   <div id="app">
     <table>
       <thead v-pre>
-      <tr>
-        <th class="body">内容</th>
-        <th class="delete"></th>
-      </tr>
+        <tr>
+          <th class="body">内容</th>
+          <th class="delete"></th>
+        </tr>
       </thead>
       <tbody>
-      <tr
-          v-for="memo in memos"
-          v-bind:key="memo.id">
-        <td v-bind:class='generateClassName(memo)' v-on:click="selectMemo(memo)">{{ splitTitle(memo) }}</td>
-        <td class="delete">
-          <button class="delete" v-on:click="removeMemo(memo)" v-bind:disabled="editMode">
-            削除
-          </button>
-        </td>
-      </tr>
-      <tr v-bind:key="-1">
-        <td class="new">
-          <button class="new" v-on:click="selectMemo({})">
-            新規
-          </button>
-        </td>
-        <td></td>
-      </tr>
+        <tr v-for="memo in memos"
+            v-bind:key="memo.id">
+          <td v-bind:class='generateClassName(memo)' v-on:click="selectMemo(memo)">{{ splitTitle(memo) }}</td>
+          <td class="delete">
+            <button class="delete" v-on:click="removeMemo(memo)" v-bind:disabled="editMode">
+              削除
+            </button>
+          </td>
+        </tr>
+        <tr v-bind:key="-1">
+          <td class="new">
+            <button class="new" v-on:click="selectMemo({})">
+              新規
+            </button>
+          </td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
 
