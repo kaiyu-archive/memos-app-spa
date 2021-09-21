@@ -103,7 +103,8 @@ export default {
     },
 
     generateClassName (memo) {
-      return 'body' + (!this.editMode && this.selectedMemo.id === undefined || memo.id === this.selectedMemo.id ? '' : '-disabled')
+      const enabled = !this.editMode && this.selectedMemo.id === undefined || memo.id === this.selectedMemo.id
+      return `body${enabled ? '' : '-disabled'}`
     },
 
     splitTitle (memo) {
