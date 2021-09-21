@@ -2,7 +2,7 @@
   <div class="edit">
     内容 <textarea class="new" v-model="selectedMemo.body"></textarea>
     <button class="edit" v-on:click="saveMemo(selectedMemo)">
-      編集
+      保存
     </button>
     <button class="edit" v-on:click="unselectMemo()">
       キャンセル
