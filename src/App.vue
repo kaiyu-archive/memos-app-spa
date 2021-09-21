@@ -78,7 +78,7 @@ export default {
     },
 
     saveMemo (memo) {
-      const body = memo.body && memo.body.trim()
+      const body = memo.body?.trim()
       if (!body) {
         return
       }
